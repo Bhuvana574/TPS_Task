@@ -12,7 +12,7 @@ public class GunController : MonoBehaviour
     int damage = 1;
     [SerializeField] float timer;
     [SerializeField] Transform firePoint;
-   // public ParticleSystem particleSyste;
+    public ParticleSystem particleSyste;
     //public GameObject bulletPrefab;
     //[SerializeField] float bulletSpeed;
    // AudioSource audioSource;
@@ -32,13 +32,13 @@ public class GunController : MonoBehaviour
         {
             if (Input.GetButton("Fire1"))
             {
-                //Instantiate(particle, particlePoint.position, Quaternion.identity);
+                //Instantiate(particleSyste, particlePoint.position, Quaternion.identity);
                 //BulletSpawn();
               //  audioSource.clip = audioClip;
                // audioSource.Play();
                 timer = 0f;
                 FireGun();
-
+                particleSyste.Play();
             }
         }
     }

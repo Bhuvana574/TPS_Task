@@ -25,6 +25,9 @@ public class Health : MonoBehaviour
     {
         //gameObject.SetActive(false);
         Destroy(this.gameObject);
-        SceneManager.LoadScene(2);
+        if (this.gameObject.tag == "Player")
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 }
