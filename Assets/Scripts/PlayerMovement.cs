@@ -10,6 +10,10 @@ public class PlayerMovement : MonoBehaviour
     public float turnSpeed;
     Animator anim;
     ScoreManager score;
+
+    public int healthP = 0;
+
+    public static PlayerMovement instance;
     // AudioSource audioSource;
     //public AudioClip audioClip;
 
@@ -19,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
         score = FindObjectOfType<ScoreManager>();
+        instance = this;
     }
     void Start()
     {
@@ -66,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
             print("Bottle");
             other.gameObject.SetActive(false);
             score.BottleScore();
+            healthP = score.health;
         }
         if (other.gameObject.tag == "Coin")
         {

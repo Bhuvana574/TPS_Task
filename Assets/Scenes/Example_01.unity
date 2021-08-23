@@ -1048,6 +1048,7 @@ MonoBehaviour:
   playerSpeed: 10
   backSpeed: 5
   turnSpeed: 100
+  healthP: 0
 --- !u!114 &561370029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1077,7 +1078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79d74e836fba0ff4892639c6fc3fdc9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 100
+  startHealth: 5
   currentHealth: 0
 --- !u!4 &586869708 stripped
 Transform:
