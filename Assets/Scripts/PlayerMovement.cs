@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     Animator anim;
     ScoreManager score;
     public GameObject ScoreM;
+  public   ParticleSystem coinParticle;
 
     public int healthP = 0;
 
@@ -50,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (other.gameObject.tag == "Coin")
         {
+            Instantiate(coinParticle, this.gameObject.transform.position, Quaternion.identity);
             print("Coin");
             other.gameObject.transform.parent.gameObject.SetActive(false);
             score.CoinScore();
