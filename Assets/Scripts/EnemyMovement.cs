@@ -9,6 +9,7 @@ public class EnemyMovement : MonoBehaviour
     AggroDetection aggro;
     NavMeshAgent nav;
     Transform enemyTarget;
+    ParticleSystem enemyParticle;
     private void Awake()
     {
         nav = GetComponent<NavMeshAgent>();

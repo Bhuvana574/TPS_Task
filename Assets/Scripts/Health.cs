@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     int startHealth = 5;
     [SerializeField]
     int currentHealth;
+   public ParticleSystem enemyParticle;
     private void OnEnable()
     {
         currentHealth = startHealth;
@@ -23,6 +24,8 @@ public class Health : MonoBehaviour
     }
     private void Die()
     {
+        Instantiate(enemyParticle, this.gameObject.transform.position,Quaternion.identity);
+        enemyParticle.gameObject.SetActive(true);
         //gameObject.SetActive(false);
         Destroy(this.gameObject);
         if (this.gameObject.tag == "Player")
